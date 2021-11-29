@@ -7,16 +7,18 @@ const SearchComponent = () => {
 	return (
 		<Paper
 			component="form"
-			elevation={3}
+			variant="outlined"
 			sx={{
 				display: "flex",
 				alignItems: "center",
-				margin: "1rem 0",
-				width: 400,
+				margin: "1rem 0 3rem",
+				width: 600,
+				padding: "0.5rem 1rem",
 			}}
+			className="search-component shadow"
 		>
 			<IconButton type="submit">
-				<Search width={20} />
+				<Search width={24} />
 			</IconButton>
 			<InputBase
 				sx={{

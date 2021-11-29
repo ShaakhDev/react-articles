@@ -1,10 +1,16 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./Home/HomePage";
+import ArticlePage from "./Article/ArticlePage";
 
 function App() {
 	return (
-		<>
-			<HomePage />
-		</>
+		<React.Fragment>
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/article" element={<ArticlePage />} />
+			</Routes>
+		</React.Fragment>
 	);
 }
 
