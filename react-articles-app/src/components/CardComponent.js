@@ -6,16 +6,18 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Calendar, ArrowRight } from "akar-icons";
-import cardImg from "../images/1.png";
+// import cardImg from "../images/1.png";
 
-export default function MediaCard() {
+export default function CardComponent(props) {
 	const navigate = useNavigate();
+	const { title, description, urlToImage, publishedAt } = props;
+
 	return (
 		<Card variant="outlined" className="card shadow">
 			<CardMedia
 				component="img"
 				height="217"
-				image={cardImg}
+				image={urlToImage}
 				alt="netflix brand"
 			/>
 			<CardContent>
@@ -26,7 +28,7 @@ export default function MediaCard() {
 					component="p"
 				>
 					<Calendar strokeWidth={1} size={14} />
-					June 29th, 2021
+					{publishedAt}
 				</Typography>
 				<Typography
 					gutterBottom
@@ -34,12 +36,10 @@ export default function MediaCard() {
 					variant="p"
 					component="p"
 				>
-					The 2020 World's Most Valuable Brands
+					{title}
 				</Typography>
 				<Typography variant="p" className="card-description" component="p">
-					Non sed molestie tortor massa vitae in mattis. Eget vel consequat
-					hendrerit commodo libero aliquam. Urna arcu nunc tortor vitae pharetra
-					aliquam. Urna arcu nunc tortor vitae pharetra...
+					{description}
 				</Typography>
 			</CardContent>
 			<CardActions>
