@@ -4,10 +4,7 @@ import { api } from "../Service/axios";
 export const fetchArticleData = () => {
 	return async dispatch => {
 		const fetchData = async () => {
-			const API_KEY = "824b3baa4a7040f1bfbed034b877ea21";
-			const response = await api.get(
-				`/top-headlines?country=us&apiKey=${API_KEY}`
-			);
+			const response = await api.get("/articles?_limit=21");
 
 			if (!response.status === "ok") {
 				throw new Error("Couldn't fetch article data...");
@@ -22,8 +19,8 @@ export const fetchArticleData = () => {
 			console.log(articleData);
 			dispatch(
 				articleActions.replaceArticles({
-					articles: articleData.articles || [],
-					totalQuantity: articleData.articles.length,
+					articles: articleData || [],
+					totalQuantity: articleData.length,
 				})
 			);
 		} catch (error) {

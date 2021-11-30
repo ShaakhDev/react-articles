@@ -25,9 +25,9 @@ p.card-title {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     /* number of lines to show */
-    line-clamp: 2;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
@@ -39,9 +39,9 @@ p.card-description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     /* number of lines to show */
-    line-clamp: 4;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 

@@ -25,10 +25,10 @@ const HomePage = () => {
 				>
 					{articlesList.map(article => (
 						<CardComponent
-							key={article.title}
+							key={article.id}
 							title={article.title}
-							description={article.description}
-							urlToImage={article.urlToImage}
+							description={article.summary}
+							urlToImage={article.imageUrl}
 							publishedAt={article.publishedAt}
 						/>
 					))}

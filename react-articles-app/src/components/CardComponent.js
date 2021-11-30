@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Calendar, ArrowRight } from "akar-icons";
+
 // import cardImg from "../images/1.png";
 
 export default function CardComponent(props) {

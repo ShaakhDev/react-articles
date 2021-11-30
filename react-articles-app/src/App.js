@@ -8,9 +8,9 @@ import { fetchArticleData } from "./store/article-actions";
 function App() {
 	const dispatch = useDispatch();
 
-	// useEffect(() => {
-	// 	dispatch(fetchArticleData());
-	// }, [dispatch]);
+	useEffect(() => {
+		dispatch(fetchArticleData());
+	}, [dispatch]);
 	return (
 		<React.Fragment>
 			<Routes>
