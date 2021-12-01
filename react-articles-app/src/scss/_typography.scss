@@ -22,25 +22,13 @@ p.card-title {
     padding: 1rem 0;
     width: 100%;
     min-height: 8.2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
 }
 
 p.card-description {
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 150%;
     width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
 }
 
 p.card-date,

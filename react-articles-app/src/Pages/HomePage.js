@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
+import { useSelector } from "react-redux";
 import SearchInput from "./SearchInput";
 import CardComponent from "../components/CardComponent";
-import { useSelector } from "react-redux";
 
 const HomePage = () => {
 	const articlesList = useSelector(state => state.articles.articles);

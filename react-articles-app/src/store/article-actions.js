@@ -4,7 +4,8 @@ import { api } from "../Service/axios";
 export const fetchArticleData = () => {
 	return async dispatch => {
 		const fetchData = async () => {
-			const response = await api.get("?_limit=21");
+			const resultLimit = 30;
+			const response = await api.get(`?_limit=${resultLimit}`);
 
 			if (!response.status === "ok")
 				throw new Error("Couldn't fetch article data...");

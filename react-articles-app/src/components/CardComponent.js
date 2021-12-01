@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "akar-icons";
 import moment from "moment";
+import { TextToShow } from "./TextToShow";
 import {
 	Card,
 	CardActions,
@@ -43,11 +44,12 @@ export default function CardComponent(props) {
 						variant="p"
 						component="p"
 					>
-						{title}
+						<TextToShow content={title} limitChar={100} />
 					</Typography>
 				</Link>
 				<Typography variant="p" className="card-description" component="p">
-					{description}
+					<TextToShow content={description} limitChar={97} />
+					...
 				</Typography>
 			</CardContent>
 			<CardActions>
