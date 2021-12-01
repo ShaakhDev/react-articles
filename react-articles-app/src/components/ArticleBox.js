@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Container, Paper, CardMedia } from "@mui/material";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import { Container, Paper, CardMedia, Box, Button } from "@mui/material";
 import { ArrowLeft } from "akar-icons";
-import cardImg from "../images/5.png";
 
-const ArticleBox = ({ children }) => {
+const ArticleBox = ({ imageUrl, children }) => {
 	const navigate = useNavigate();
+
 	return (
 		<>
 			<Container className="article-container ">
@@ -14,15 +12,15 @@ const ArticleBox = ({ children }) => {
 					<CardMedia
 						component="img"
 						height="245"
-						image={cardImg}
-						alt="netflix brand"
+						image={imageUrl}
+						alt="article img"
 					/>
 				</Box>
 				<Paper variant="outlined" className="article-box shadow">
 					{children}
 				</Paper>
 				<Button
-					onClick={() => navigate("/")}
+					onClick={() => navigate("/", { replace: true })}
 					className="card-button"
 					variant="text"
 					size="large"

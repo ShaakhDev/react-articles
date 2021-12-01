@@ -37,9 +37,19 @@ body {
     -moz-box-shadow: 0px 6px 26px -6px rgb(234, 234, 234);
 }
 
+.fallback {
+    font-weight: 400;
+    padding: 2rem 0;
+    text-align: center;
+}
+
 .card {
     max-width: 40rem;
     margin-bottom: 4rem;
+
+    a {
+        text-decoration: none;
+    }
 
     @media screen and (max-width: 1400px) {
         max-width: 37rem;

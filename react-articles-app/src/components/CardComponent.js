@@ -1,26 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "akar-icons";
-
-// import cardImg from "../images/1.png";
+import moment from "moment";
+import {
+	Card,
+	CardActions,
+	CardContent,
+	CardMedia,
+	Button,
+	Typography,
+} from "@mui/material";
 
 export default function CardComponent(props) {
-	const navigate = useNavigate();
-	const { title, description, urlToImage, publishedAt } = props;
+	const { id, title, description, urlToImage, publishedAt } = props;
+
+	//convert date from  ISO format to human-readable
+	const published = moment(publishedAt).format("LL");
 
 	return (
 		<Card variant="outlined" className="card shadow">
-			<CardMedia
-				component="img"
-				height="217"
-				image={urlToImage}
-				alt="netflix brand"
-			/>
+			<Link to={`article/${id}`}>
+				<CardMedia
+					component="img"
+					height="217"
+					image={urlToImage}
+					alt="article image"
+				/>
+			</Link>
 			<CardContent>
 				<Typography
 					className="card-date"
@@ -29,29 +34,28 @@ export default function CardComponent(props) {
 					component="p"
 				>
 					<Calendar strokeWidth={1} size={14} />
-					{publishedAt}
+					{published}
 				</Typography>
-				<Typography
-					gutterBottom
-					className="card-title"
-					variant="p"
-					component="p"
-				>
-					{title}
-				</Typography>
+				<Link to={`article/${id}`}>
+					<Typography
+						gutterBottom
+						className="card-title"
+						variant="p"
+						component="p"
+					>
+						{title}
+					</Typography>
+				</Link>
 				<Typography variant="p" className="card-description" component="p">
 					{description}
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button
-					onClick={() => navigate("/article")}
-					className="card-button"
-					variant="text"
-					size="large"
-				>
-					Read more <ArrowRight strokeWidth={1} size={16} />
-				</Button>
+				<Link to={`article/${id}`}>
+					<Button className="card-button" variant="text" size="large">
+						Read more <ArrowRight strokeWidth={1} size={16} />
+					</Button>
+				</Link>
 			</CardActions>
 		</Card>
 	);

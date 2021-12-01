@@ -4,11 +4,10 @@ import { api } from "../Service/axios";
 export const fetchArticleData = () => {
 	return async dispatch => {
 		const fetchData = async () => {
-			const response = await api.get("/articles?_limit=21");
+			const response = await api.get("?_limit=21");
 
-			if (!response.status === "ok") {
+			if (!response.status === "ok")
 				throw new Error("Couldn't fetch article data...");
-			}
 
 			const data = response.data;
 			return data;
@@ -16,7 +15,6 @@ export const fetchArticleData = () => {
 
 		try {
 			const articleData = await fetchData();
-			console.log(articleData);
 			dispatch(
 				articleActions.replaceArticles({
 					articles: articleData || [],
