@@ -5,7 +5,7 @@ const articleSlice = createSlice({
 	initialState: {
 		articles: [],
 		isLoading: true,
-		search: [],
+		search: "",
 		searchData: [],
 
 		// totalQuantity: 0,

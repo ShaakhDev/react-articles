@@ -1,8 +1,8 @@
-import { Paper, TextField, IconButton } from "@mui/material";
+import { Paper, IconButton, InputBase } from "@mui/material";
 
 import { Search } from "akar-icons";
 
-const SearchBar = ({ onInput }) => {
+const SearchBar = ({ onInput, value }) => {
 	return (
 		<Paper
 			component="form"
@@ -19,21 +19,13 @@ const SearchBar = ({ onInput }) => {
 			<IconButton type="submit">
 				<Search width={24} />
 			</IconButton>
-			{/* <InputBase
-				sx={{
-					ml: 1,
-					flex: 1,
-					fontSize: "1.6rem",
-					fontWeight: "400",
-					color: "#575757",
-				}}
-				placeholder="Search article"
-			/> */}
-			<TextField
-				// label="Search Article"
+
+			<InputBase
+				className="input"
 				onInput={onInput}
 				placeholder="Search article"
 				style={{ width: "100%" }}
+				value={value}
 			/>
 		</Paper>
 	);
