@@ -16,6 +16,9 @@ export default function CardComponent(props) {
 
 	//convert date from  ISO format to human-readable
 	const published = moment(publishedAt).format("LL");
+	const createMarkup = html => {
+		return { __html: html };
+	};
 
 	return (
 		<Card variant="outlined" className="card shadow">
@@ -27,6 +30,7 @@ export default function CardComponent(props) {
 					alt="article image"
 				/>
 			</Link>
+
 			<CardContent>
 				<Typography
 					className="card-date"
@@ -43,16 +47,22 @@ export default function CardComponent(props) {
 						className="card-title"
 						variant="p"
 						component="p"
-					>
-						<TextToShow content={title} limitChar={100} />
-					</Typography>
+						dangerouslySetInnerHTML={createMarkup(title)}
+					/>
+					{/* <TextToShow content={title} limitChar={100} /> */}
+					{/* </Typography> */}
 				</Link>
-				<Typography variant="p" className="card-description" component="p">
-					<TextToShow content={description} limitChar={97} />
-					...
-				</Typography>
+				<Typography
+					variant="p"
+					className="card-description"
+					component="p"
+					dangerouslySetInnerHTML={createMarkup(description)}
+				/>
+				{/* <TextToShow content={description} limitChar={97} /> */}
+				...
+				{/* </Typography> */}
 			</CardContent>
-			<CardActions>
+			<CardActions className="card-actions">
 				<Link to={`article/${id}`}>
 					<Button className="card-button" variant="text" size="large">
 						Read more <ArrowRight strokeWidth={1} size={16} />

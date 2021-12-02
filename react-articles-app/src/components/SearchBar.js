@@ -1,9 +1,8 @@
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
+import { Paper, TextField, IconButton } from "@mui/material";
+
 import { Search } from "akar-icons";
 
-const SearchComponent = () => {
+const SearchBar = ({ onInput }) => {
 	return (
 		<Paper
 			component="form"
@@ -15,12 +14,12 @@ const SearchComponent = () => {
 				width: 600,
 				padding: "0.5rem 1rem",
 			}}
-			className="search-component shadow"
+			className="search-bar shadow"
 		>
 			<IconButton type="submit">
 				<Search width={24} />
 			</IconButton>
-			<InputBase
+			{/* <InputBase
 				sx={{
 					ml: 1,
 					flex: 1,
@@ -29,9 +28,15 @@ const SearchComponent = () => {
 					color: "#575757",
 				}}
 				placeholder="Search article"
+			/> */}
+			<TextField
+				// label="Search Article"
+				onInput={onInput}
+				placeholder="Search article"
+				style={{ width: "100%" }}
 			/>
 		</Paper>
 	);
 };
 
-export default SearchComponent;
+export default SearchBar;

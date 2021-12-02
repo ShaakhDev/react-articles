@@ -4,12 +4,26 @@ const articleSlice = createSlice({
 	name: "articles",
 	initialState: {
 		articles: [],
-		totalQuantity: 0,
+		isLoading: true,
+		search: [],
+		searchData: [],
+
+		// totalQuantity: 0,
 	},
 	reducers: {
 		replaceArticles(state, action) {
 			state.articles = action.payload.articles;
-			state.totalQuantity = action.payload.totalQuantity;
+			state.isLoading = false;
+		},
+		setData(state, action) {
+			state.articles = action.payload;
+			state.isLoading = false;
+		},
+		searchInput(state, action) {
+			state.search = action.payload;
+		},
+		searchData(state, action) {
+			state.searchData = action.payload.searchData;
 		},
 	},
 });

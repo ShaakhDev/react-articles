@@ -1,4 +1,4 @@
-import SearchComponent from "../components/SearchComponent";
+import SearchComponent from "../components/SearchBar";
 
 const SearchInput = () => {
 	return (

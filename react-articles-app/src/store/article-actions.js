@@ -19,7 +19,7 @@ export const fetchArticleData = () => {
 			dispatch(
 				articleActions.replaceArticles({
 					articles: articleData || [],
-					totalQuantity: articleData.length,
+					// totalQuantity: articleData.length,
 				})
 			);
 		} catch (error) {
