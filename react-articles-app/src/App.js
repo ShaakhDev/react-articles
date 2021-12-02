@@ -1,7 +1,6 @@
 import React, { lazy, useEffect, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
-
 import { fetchArticleData } from "./store/article-actions";
 const HomePage = lazy(() => import("./Pages/HomePage"));
 const ArticlePage = lazy(() => import("./Pages/ArticlePage"));

@@ -2,6 +2,7 @@ import { articleActions } from "./article-slice";
 import { api } from "../Service/axios";
 
 export const fetchArticleData = () => {
+	//we create an action function to get all data from API
 	return async dispatch => {
 		const fetchData = async () => {
 			const resultLimit = 30;
@@ -19,10 +20,10 @@ export const fetchArticleData = () => {
 			dispatch(
 				articleActions.replaceArticles({
 					articles: articleData || [],
-					// totalQuantity: articleData.length,
 				})
 			);
 		} catch (error) {
+			dispatch(articleActions.showError(error.message));
 			console.log(error.message);
 		}
 	};

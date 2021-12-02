@@ -6,16 +6,18 @@ import { fetchArticleData } from "../store/article-actions";
 import ArticleBox from "../components/ArticleBox";
 
 const ArticlePage = () => {
-	const { articleId } = useParams();
-	const [currentArticle, setcurrentArticle] = useState({});
+	const { articleId } = useParams(); // to get the id of current pressed article-card
+	const [currentArticle, setcurrentArticle] = useState({}); //to save   a current article object
 	const articleList = useSelector(state => state.articles.articles);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		//to get data from API when the article page will update
 		dispatch(fetchArticleData());
 	}, [dispatch]);
 
 	useEffect(() => {
+		//to get current articles by ID from the state
 		const getArticleById = id => {
 			return articleList.find(item => {
 				if (item.id === +id) return item;

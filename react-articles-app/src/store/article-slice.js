@@ -7,16 +7,13 @@ const articleSlice = createSlice({
 		isLoading: true,
 		search: "",
 		searchData: [],
-
-		// totalQuantity: 0,
+		hasError: false,
+		errorMsg: "",
 	},
 	reducers: {
 		replaceArticles(state, action) {
+			state.hasError = false;
 			state.articles = action.payload.articles;
-			state.isLoading = false;
-		},
-		setData(state, action) {
-			state.articles = action.payload;
 			state.isLoading = false;
 		},
 		searchInput(state, action) {
@@ -24,6 +21,10 @@ const articleSlice = createSlice({
 		},
 		searchData(state, action) {
 			state.searchData = action.payload.searchData;
+		},
+		showError(state, action) {
+			state.hasError = true;
+			state.errorMsg = action.payload;
 		},
 	},
 });

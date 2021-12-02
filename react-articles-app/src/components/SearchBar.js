@@ -1,5 +1,4 @@
 import { Paper, IconButton, InputBase } from "@mui/material";
-
 import { Search } from "akar-icons";
 
 const SearchBar = ({ onInput, value }) => {
@@ -16,7 +15,7 @@ const SearchBar = ({ onInput, value }) => {
 			}}
 			className="search-bar shadow"
 		>
-			<IconButton type="submit">
+			<IconButton className="search-icon">
 				<Search width={24} />
 			</IconButton>
 
@@ -24,7 +23,6 @@ const SearchBar = ({ onInput, value }) => {
 				className="input"
 				onInput={onInput}
 				placeholder="Search article"
-				style={{ width: "100%" }}
 				value={value}
 			/>
 		</Paper>

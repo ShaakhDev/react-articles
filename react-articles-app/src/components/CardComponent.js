@@ -15,6 +15,7 @@ export default function CardComponent(props) {
 
 	//convert date from  ISO format to human-readable
 	const published = moment(publishedAt).format("LL");
+
 	const createMarkup = html => {
 		return { __html: html };
 	};
